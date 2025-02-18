@@ -6,7 +6,6 @@ import java.util.Random;
 import java.util.concurrent.Callable;
 import java.util.concurrent.TimeUnit;
 
-import org.lbee.store.KeyExistsException;
 import org.lbee.store.KeyNotExistsException;
 import org.lbee.store.Store;
 import org.lbee.store.Transaction;
@@ -22,26 +21,30 @@ public class ClientDet implements Callable<Boolean> {
     // Store used by client
     private final Store store;
     // potential keys and values
-    List<Integer> keys;
-    List<String> values;
+    private final List<Integer> keys;
+    private final List<String> values;
+    // Number of transactions to perform
+    private final int nbTransactionToStart; 
+    private final int nbRequestPerTransaction;
     // Random used to make some stochastic behavior
     private final Random random;
     private static int nbc = 0;
 
-    public ClientDet(Store store, List<Integer> keys, List<String> values) throws IOException {
+    public ClientDet(Store store, List<Integer> keys, List<String> values, int nbTransactionToStart, int nbRequestPerTransaction) throws IOException {
         this.guid = nbc++;
         this.store = store;
         this.keys = keys;
         this.values = values;
+        this.nbTransactionToStart = nbTransactionToStart;
+        this.nbRequestPerTransaction = nbRequestPerTransaction;
         this.random = new Random();
     }
 
     @Override
     public Boolean call() throws InterruptedException {
         boolean commitSucceed = false;
-        // long startTime = System.currentTimeMillis();
 
-        for(int nbt = 0; nbt < 5; nbt++) {
+        for(int nbt = 0; nbt < nbTransactionToStart; nbt++) {
             // open a new transaction
             Transaction tx = null;
             try {
@@ -56,9 +59,8 @@ public class ClientDet implements Callable<Boolean> {
             System.out.printf("-- Open a new transaction %s from client %s.\n", tx, guid);
 
             // Do some update, read, delete
-            int nRequest = 5;
-            System.out.printf("Making %s request for %s.\n", nRequest, tx);
-            for (int i = 0; i < nRequest; i++) {
+            System.out.printf("Making %s request for %s.\n", nbRequestPerTransaction, tx);
+            for (int i = 0; i < nbRequestPerTransaction; i++) {
                 this.doSomething(tx);
                 // Simulate some delay
                 TimeUnit.MILLISECONDS.sleep(10);
@@ -79,9 +81,6 @@ public class ClientDet implements Callable<Boolean> {
 
             // Wait some delay before opening a new transaction
             TimeUnit.SECONDS.sleep(1);
-            // stop after some time
-            // if (System.currentTimeMillis() - startTime >= 5 * 1000)
-            //     break;
         }
         return commitSucceed;
     }

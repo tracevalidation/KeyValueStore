@@ -21,7 +21,10 @@ public class MainSimple {
         // Store store = new Store();
         TLATracer tracer = TLATracer.getTracer("store.ndjson",
                 ClockFactory.getClock(ClockFactory.MEMORY));
-        Store store = new Store(tracer);
+        // Maximum number of transactions (better be consistent with conf file)
+        int maxNbTx = 10;
+
+        Store store = new Store(maxNbTx, tracer);
 
         final Collection<Callable<Boolean>> tasks = new HashSet<>();
 

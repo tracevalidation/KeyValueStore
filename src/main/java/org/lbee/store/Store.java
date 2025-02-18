@@ -15,7 +15,8 @@ public class Store {
 
     private static final String NO_VALUE = "a value that cannot be";
     // Maximum number of transactions (better be consistent with conf file)
-    private static final long MAX_NB_TX = 10;  
+    // private static final long MAX_NB_TX = 10;  
+    private int maxNbTx;
 
     private final Map<Integer, String> store;
     private final Map<Transaction, Map<Integer, String>> snapshots;
@@ -41,8 +42,9 @@ public class Store {
         this.missed = new HashMap<>();
     }
 
-    public Store(TLATracer tracer) {
+    public Store(int maxNbTx, TLATracer tracer) {
         this();
+        this.maxNbTx = maxNbTx;
         this.tracer = tracer;
         this.traceTx = tracer.getVariableTracer("tx");
         this.traceWritten = tracer.getVariableTracer("written");
@@ -50,10 +52,10 @@ public class Store {
     }
 
     public synchronized Transaction open() throws IOException, TransactionException {
-        if (this.nbOpenTransactions >= MAX_NB_TX) {
+        if (this.nbOpenTransactions >= this.maxNbTx) {
             throw new TransactionException();
         }
-        long newTxId = this.lastTransactionId++ % MAX_NB_TX;
+        long newTxId = this.lastTransactionId++ % this.maxNbTx;
         Transaction transaction = new Transaction(newTxId);
         this.nbOpenTransactions++;
         openTransactions.add(transaction);
@@ -66,7 +68,7 @@ public class Store {
         this.traceTx.add(transaction.getId() + "");
         // either the "OpenTx" or the "CloseTx" should be specified to
         // detect wrong commits
-        this.tracer.log("OpenTx", new Object[] { transaction.toString() });
+        this.tracer.log("OpenTx", new Object[]{transaction.toString()});
         // this.tracer.log("OpenTx");
         // this.tracer.log();
 
@@ -89,11 +91,10 @@ public class Store {
         written.get(transaction).add(key);
 
         // trace
-
         synchronized (this) {
             this.traceWritten.getField(transaction.getId() + "").add(key);
             this.snapshot.getField(transaction.getId() + "").setKey(key, value);
-            this.tracer.log("Add", new Object[] { transaction.toString(), key.intValue(), value});
+            this.tracer.log("Add", new Object[]{transaction.toString(), key.intValue(), value});
             // this.tracer.log();
         }
     }
@@ -103,16 +104,39 @@ public class Store {
         System.out.println("Update (" + transaction + "): " + key + " " + value);
 
         final Map<Integer, String> snapshot = snapshots.get(transaction);
-        // if key doesn't already exist (local operation on the snapshot or
-        // in the store) throw exception
-        if (!(snapshot.containsKey(key) && !snapshot.get(key).equals(NO_VALUE))
-                && !store.containsKey(key)) {
-            throw new KeyNotExistsException();
+        if (!snapshot.containsKey(key)) { // key doesn't exist in the snapshot
+            if (!store.containsKey(key)) { // and it doesn't exist in the store
+                throw new KeyNotExistsException();
+            } else { // key exists in the store 
+                if (store.get(key).equals(NO_VALUE)) { // but it is a NO_VALUE (because of a remove operation)
+                    throw new KeyNotExistsException();
+                } else { 
+                    if (store.get(key).equals(value)) { // key exists in the store but already has the value
+                        throw new ValueExistsException();
+                    }
+                }
+            }
+        } else { // key exists in the snapshot 
+            if (snapshot.get(key).equals(NO_VALUE)) { // but it is a NO_VALUE (because of a remove operation)
+                throw new KeyNotExistsException();
+            } else {
+                if (snapshot.get(key).equals(value)) { // key exists in the snapshot but already has the value
+                    throw new ValueExistsException();
+                }
+            }
         }
-        if ((snapshot.containsKey(key) && !snapshot.get(key).equals(NO_VALUE) && snapshot.get(key).equals(value))
-                || (store.containsKey(key) && store.get(key).equals(value))) {
-            throw new ValueExistsException();
-        }
+
+        // careless checking of the existence of the key and the value in the snapshot and the store
+        // if used, we could update a key which was removed in the snapshot
+        // if (!(snapshot.containsKey(key) && !snapshot.get(key).equals(NO_VALUE))
+        //         && !store.containsKey(key)) {
+        //     throw new KeyNotExistsException();
+        // }
+        // if ((snapshot.containsKey(key) && !snapshot.get(key).equals(NO_VALUE) && snapshot.get(key).equals(value))
+        //         || (store.containsKey(key) && store.get(key).equals(value))) {
+        //     throw new ValueExistsException();
+        // }
+
         // Change value in snapshot store
         snapshot.put(key, value);
         written.get(transaction).add(key);
@@ -121,7 +145,7 @@ public class Store {
         synchronized (this) {
             this.traceWritten.getField(transaction.getId() + "").add(key);
             this.snapshot.getField(transaction.getId() + "").setKey(key, value);
-            this.tracer.log("Update", new Object[] { transaction.toString(), key.intValue(), value});
+            this.tracer.log("Update", new Object[]{transaction.toString(), key.intValue(), value});
             // this.tracer.log();
         }
     }
@@ -144,7 +168,7 @@ public class Store {
         // trace
         synchronized (this) {
             this.traceWritten.getField(transaction.getId() + "").add(key);
-            this.tracer.log("Remove", new Object[] { transaction.toString(), key.intValue()});
+            this.tracer.log("Remove", new Object[]{transaction.toString(), key.intValue()});
             // this.tracer.log();
         }
     }
@@ -178,7 +202,7 @@ public class Store {
             // trace
             this.traceTx.remove(transaction.getId() + "");
             this.traceWritten.getField(transaction.getId() + "").clear();
-            this.tracer.log("RollbackTx", new Object[] { transaction.toString()});
+            this.tracer.log("RollbackTx", new Object[]{transaction.toString()});
             // this.tracer.log();
             return false;
         }
@@ -206,7 +230,7 @@ public class Store {
         // trace
         this.traceTx.remove(transaction.getId() + "");
         this.traceWritten.getField(transaction.getId() + "").clear();
-        this.tracer.log("CloseTx", new Object[] { transaction.toString()});
+        this.tracer.log("CloseTx", new Object[]{transaction.toString()});
         // this.tracer.log();
         return true;
     }

@@ -3,12 +3,6 @@ package org.lbee.start;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonParser;
-import com.google.gson.JsonSyntaxException;
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -21,7 +15,6 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
 import org.lbee.client.Client;
-import org.lbee.client.ClientDet;
 import org.lbee.client.ClientInit;
 import org.lbee.instrumentation.clock.ClockException;
 import org.lbee.instrumentation.clock.ClockFactory;
@@ -29,16 +22,26 @@ import org.lbee.instrumentation.trace.TLATracer;
 import org.lbee.store.KeyExistsException;
 import org.lbee.store.Store;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+import com.google.gson.JsonSyntaxException;
+import com.google.gson.reflect.TypeToken;
+
 public class Main {
+    private static final int NB_CLIENTS = 5;
+    
     public static void main(String[] args) throws InterruptedException, IOException, KeyExistsException, ClockException {
         List<Integer> keys = new ArrayList<>();
         List<String> vals = new ArrayList<>();
         List<String> txIds = new ArrayList<>();
         readConfig("conf.ndjson", keys, vals, txIds);
+        int maxNbTx = txIds.size();
 
         TLATracer tracer = TLATracer.getTracer("store.ndjson",
                 ClockFactory.getClock(ClockFactory.MEMORY));
-        Store store = new Store(tracer);
+        Store store = new Store(maxNbTx, tracer);
 
         final Collection<Callable<Boolean>> tasks = new HashSet<>();
 
@@ -57,9 +60,10 @@ public class Main {
         }
         tasks.remove(ci);
 
-        for (int i = 0; i < 12; i++) {
+        for (int i = 0; i < NB_CLIENTS; i++) {
             // final Client c = new Client(store, keys, vals);
-            final ClientDet c = new ClientDet(store, keys, vals);
+            // 2 trnasactions, 10 requests per transaction
+            final Client c = new Client(store, keys, vals,5,5);
             System.out.printf("Create new client.\n");
             tasks.add(c);
         }

@@ -22,32 +22,36 @@ public class Client implements Callable<Boolean> {
     // Store used by client
     private final Store store;
     // potential keys and values
-    List<Integer> keys;
-    List<String> values;
+    private final List<Integer> keys;
+    private final List<String> values;
+    // Number of transactions to perform
+    private final int nbTransactionToStart; 
+    private final int nbRequestPerTransaction;
     // Random used to make some stochastic behavior
     private final Random random;
     private static int nbc = 0;
 
-    public Client(Store store, List<Integer> keys, List<String> values) throws IOException {
+    public Client(Store store, List<Integer> keys, List<String> values, int nbTransactionToStart, int nbRequestPerTransaction) throws IOException {
         this.guid = nbc++;
         this.store = store;
         this.keys = keys;
         this.values = values;
+        this.nbTransactionToStart = nbTransactionToStart;
+        this.nbRequestPerTransaction = nbRequestPerTransaction;
         this.random = new Random();
     }
 
     @Override
     public Boolean call() throws InterruptedException {
         boolean commitSucceed = false;
-        long startTime = System.currentTimeMillis();
 
-        while (true) {
+        for(int nbt = 0; nbt < nbTransactionToStart; nbt++) {
             // open a new transaction
             Transaction tx = null;
             try {
                 tx = store.open();
             } catch (IOException e) {
-                e.printStackTrace();
+                System.out.println("xxx IO problem when opening transaction");
                 return false;
             } catch (TransactionException e) {
                 System.out.printf("--- No more transaction for client %s.\n", guid);
@@ -56,12 +60,11 @@ public class Client implements Callable<Boolean> {
             System.out.printf("-- Open a new transaction %s from client %s.\n", tx, guid);
 
             // Do some update, read, delete
-            int nRequest = random.nextInt(10);
-            System.out.printf("Making %s request for %s.\n", nRequest, tx);
-            for (int i = 0; i < nRequest; i++) {
+            System.out.printf("Making %s request for %s.\n", nbRequestPerTransaction, tx);
+            for (int i = 0; i < nbRequestPerTransaction; i++) {
                 this.doSomething(tx);
                 // Simulate some delay
-                TimeUnit.MILLISECONDS.sleep(random.nextInt(100, 200));
+                TimeUnit.MILLISECONDS.sleep(random.nextInt(10, 20));
             }
             System.out.printf("Done with requests for %s.\n", tx);
 
@@ -69,7 +72,7 @@ public class Client implements Callable<Boolean> {
             try {
                 commitSucceed = store.close(tx);
             } catch (IOException e) {
-                e.printStackTrace();
+                System.out.println("xxx IO problem when committing");
             }
             if (commitSucceed) {
                 System.out.printf("--- Commit transaction %s from client %s.\n", tx, guid);
@@ -78,10 +81,7 @@ public class Client implements Callable<Boolean> {
             }
 
             // Wait some delay before opening a new transaction
-            TimeUnit.SECONDS.sleep(random.nextInt(2, 6));
-            // stop after some time
-            if (System.currentTimeMillis() - startTime >= 15 * 1000)
-                break;
+            TimeUnit.SECONDS.sleep(random.nextInt(1, 2));
         }
         return commitSucceed;
     }
