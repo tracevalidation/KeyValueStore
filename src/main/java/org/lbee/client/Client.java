@@ -47,7 +47,7 @@ public class Client implements Callable<Boolean> {
 
         for(int nbt = 0; nbt < nbTransactionToStart; nbt++) {
             // open a new transaction
-            Transaction tx = null;
+            Transaction tx;
             try {
                 tx = store.open();
             } catch (IOException e) {

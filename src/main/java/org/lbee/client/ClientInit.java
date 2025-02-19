@@ -32,7 +32,7 @@ public class ClientInit implements Callable<Boolean> {
         boolean commitSucceed = false;
 
         // open a new transaction
-        Transaction tx = null;
+        Transaction tx;
         try {
             tx = store.open();
         } catch (IOException e) {

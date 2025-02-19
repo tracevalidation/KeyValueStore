@@ -30,7 +30,7 @@ public class ClientSimple implements Callable<Boolean> {
     public Boolean call() throws InterruptedException {
         boolean commitSucceed = false;
 
-        Transaction tx = null;
+        Transaction tx;
         try {
             tx = store.open();
         } catch (IOException e) {

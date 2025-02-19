@@ -73,7 +73,7 @@ public class Main {
             try {
                 f.get();
             } catch (InterruptedException | ExecutionException e) {
-                e.printStackTrace();
+                System.out.println("Error for task: " + e.getMessage());
             }
         }
 
