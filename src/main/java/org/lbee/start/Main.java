@@ -29,7 +29,9 @@ import com.google.gson.JsonSyntaxException;
 import com.google.gson.reflect.TypeToken;
 
 public class Main {
-    private static final int NB_CLIENTS = 5;
+    private static final int NB_CLIENTS = 8;
+    private static final int NB_TX = 2;
+    private static final int NB_REQ = 8;
     
     public static void main(String[] args) throws InterruptedException, IOException, KeyExistsException, ClockException {
         List<Integer> keys = new ArrayList<>();
@@ -59,8 +61,8 @@ public class Main {
         // tasks.remove(ci);
 
         for (int i = 0; i < NB_CLIENTS; i++) {
-            // 5 transactions, 10 requests per transaction
-            final Client c = new Client(store, keys, vals,5,10);
+            // 2 transactions, 8 requests per transaction
+            final Client c = new Client(store, keys, vals, NB_TX, NB_REQ);
             System.out.printf("Create new client.\n");
             tasks.add(c);
         }
