@@ -15,7 +15,6 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
 import org.lbee.client.Client;
-import org.lbee.client.ClientInit;
 import org.lbee.instrumentation.clock.ClockException;
 import org.lbee.instrumentation.clock.ClockFactory;
 import org.lbee.instrumentation.trace.TLATracer;
@@ -45,32 +44,30 @@ public class Main {
 
         final Collection<Callable<Boolean>> tasks = new HashSet<>();
 
-        // use ClientInit to initialize the store and then ClientDet to run the tests
-        // ClientDet is the similar to Client but with less exceptions (doesn't perform add operations)
-        final ClientInit ci = new ClientInit(store, keys, vals);
-        final ExecutorService poolInit = Executors.newCachedThreadPool();
-        tasks.add(ci);
-        Collection<Future<Boolean>> future = poolInit.invokeAll(tasks);
-        for (Future<Boolean> f : future) {
-            try {
-                f.get();
-            } catch (InterruptedException | ExecutionException e) {
-                e.printStackTrace();
-            }
-        }
-        tasks.remove(ci);
+        // use ClientInit to initialize the store and then Client to run the tests
+        // final ClientInit ci = new ClientInit(store, keys, vals);
+        // final ExecutorService poolInit = Executors.newCachedThreadPool();
+        // tasks.add(ci);
+        // Collection<Future<Boolean>> future = poolInit.invokeAll(tasks);
+        // for (Future<Boolean> f : future) {
+        //     try {
+        //         f.get();
+        //     } catch (InterruptedException | ExecutionException e) {
+        //         e.printStackTrace();
+        //     }
+        // }
+        // tasks.remove(ci);
 
         for (int i = 0; i < NB_CLIENTS; i++) {
-            // final Client c = new Client(store, keys, vals);
-            // 2 trnasactions, 10 requests per transaction
-            final Client c = new Client(store, keys, vals,5,5);
+            // 5 transactions, 10 requests per transaction
+            final Client c = new Client(store, keys, vals,5,10);
             System.out.printf("Create new client.\n");
             tasks.add(c);
         }
 
         // Run all tasks concurrently.
         final ExecutorService pool = Executors.newCachedThreadPool();
-        future = pool.invokeAll(tasks);
+        Collection<Future<Boolean>> future = pool.invokeAll(tasks);
         for (Future<Boolean> f : future) {
             // Boolean result = null;
             try {

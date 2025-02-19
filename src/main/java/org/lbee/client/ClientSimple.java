@@ -18,7 +18,7 @@ public class ClientSimple implements Callable<Boolean> {
     // Client guid
     private final int guid;
     // Store used by client
-    private Store store;
+    private final Store store;
     private static int nbc = 0;
 
     public ClientSimple(Store store) throws IOException {
@@ -34,11 +34,10 @@ public class ClientSimple implements Callable<Boolean> {
         try {
             tx = store.open();
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("xxx IO problem when opening transaction");
             return false;
         } catch (TransactionException e) {
             System.out.printf("--- No more transaction for client %s.\n", guid);
-            // e.printStackTrace();
             return false;
         }
 
@@ -47,7 +46,7 @@ public class ClientSimple implements Callable<Boolean> {
                 store.add(tx, 1, "V1");
                 store.add(tx, 2, "V2");
             } catch (KeyExistsException | IOException e) {
-                e.printStackTrace();
+                System.out.println("*** Can't add first keys");
             }
         } else {
             TimeUnit.SECONDS.sleep(2);
@@ -67,7 +66,7 @@ public class ClientSimple implements Callable<Boolean> {
                     store.update(tx, 2, v2 + "-1");
                 }
             } catch (KeyExistsException | KeyNotExistsException | ValueExistsException | IOException | InterruptedException e) {
-                e.printStackTrace();
+                System.out.println("*** can't perform operation");
             }
 
             TimeUnit.SECONDS.sleep(2);
@@ -76,7 +75,7 @@ public class ClientSimple implements Callable<Boolean> {
         try {
             commitSucceed = store.close(tx);
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("xxx IO problem when committing");
         }
         if (commitSucceed) {
             System.out.printf("--- Commit transaction %s from client %s.\n", tx, guid);

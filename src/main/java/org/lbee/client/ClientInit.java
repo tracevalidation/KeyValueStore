@@ -4,13 +4,15 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Random;
 import java.util.concurrent.Callable;
+
 import org.lbee.store.KeyExistsException;
 import org.lbee.store.Store;
 import org.lbee.store.Transaction;
 import org.lbee.store.TransactionException;
 
 /**
- * Key value store consumer
+ * Key value store consumer.
+ * Initialize the store with a value for each key.
  */
 public class ClientInit implements Callable<Boolean> {
     // Store used by client
@@ -34,7 +36,7 @@ public class ClientInit implements Callable<Boolean> {
         try {
             tx = store.open();
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("xxx IO problem when opening transaction");
             return false;
         } catch (TransactionException e) {
             System.out.printf("--- No more transaction for client Init.\n");
@@ -62,7 +64,7 @@ public class ClientInit implements Callable<Boolean> {
         try {
             commitSucceed = store.close(tx);
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("xxx IO problem when committing");
         }
         return commitSucceed;
     }

@@ -31,7 +31,7 @@ public class Store {
     private TLATracer tracer;
     private VirtualField traceTx;
     private VirtualField traceWritten;
-    private VirtualField snapshot;
+    private VirtualField traceSnapshot;
 
     public Store() {
         this.store = new HashMap<>();
@@ -48,7 +48,7 @@ public class Store {
         this.tracer = tracer;
         this.traceTx = tracer.getVariableTracer("tx");
         this.traceWritten = tracer.getVariableTracer("written");
-        this.snapshot = tracer.getVariableTracer("snapshotStore");
+        this.traceSnapshot = tracer.getVariableTracer("snapshotStore");
     }
 
     public synchronized Transaction open() throws IOException, TransactionException {
@@ -81,11 +81,19 @@ public class Store {
         final Map<Integer, String> snapshot = snapshots.get(transaction);
         // if key already exists because of a previous write operation
         // (not cancelled by a remove operation) in the local snapshot
-        // or exists in the global store then, throw exception
+        // or exists in the global store (and has a value, i.e. not removed) then, throw exception
         if ((snapshot.containsKey(key) && !snapshot.get(key).equals(NO_VALUE))
-                || store.containsKey(key)) {
+                || (store.containsKey(key) && !store.get(key).equals(NO_VALUE))) {
             throw new KeyExistsException();
         }
+        // if key has been affected by an operation in a different transaction, throw exception
+        // -> just to be sure that key->NO_VALUE in the store is not because of a remove operation 
+        // from another transaction started the same time and already finished (and that the store 
+        // of the beginning of the transaction did not contain key->some_value)
+        if (missed.get(transaction).contains(key)) {
+            throw new KeyExistsException();
+        }
+
         // Change value in snapshot store
         snapshot.put(key, value);
         written.get(transaction).add(key);
@@ -93,7 +101,7 @@ public class Store {
         // trace
         synchronized (this) {
             this.traceWritten.getField(transaction.getId() + "").add(key);
-            this.snapshot.getField(transaction.getId() + "").setKey(key, value);
+            this.traceSnapshot.getField(transaction.getId() + "").setKey(key, value);
             this.tracer.log("Add", new Object[]{transaction.toString(), key.intValue(), value});
             // this.tracer.log();
         }
@@ -110,7 +118,7 @@ public class Store {
             } else { // key exists in the store 
                 if (store.get(key).equals(NO_VALUE)) { // but it is a NO_VALUE (because of a remove operation)
                     throw new KeyNotExistsException();
-                } else { 
+                } else {
                     if (store.get(key).equals(value)) { // key exists in the store but already has the value
                         throw new ValueExistsException();
                     }
@@ -125,17 +133,13 @@ public class Store {
                 }
             }
         }
-
-        // careless checking of the existence of the key and the value in the snapshot and the store
-        // if used, we could update a key which was removed in the snapshot
-        // if (!(snapshot.containsKey(key) && !snapshot.get(key).equals(NO_VALUE))
-        //         && !store.containsKey(key)) {
-        //     throw new KeyNotExistsException();
-        // }
-        // if ((snapshot.containsKey(key) && !snapshot.get(key).equals(NO_VALUE) && snapshot.get(key).equals(value))
-        //         || (store.containsKey(key) && store.get(key).equals(value))) {
-        //     throw new ValueExistsException();
-        // }
+        // if key has been affected by an operation in a different transaction, throw exception
+        // -> just to be sure that key->some_value in the store is not because of an operation 
+        // from another transaction started the same time and already finished (and that the store 
+        // of the beginning of the transaction did not contain key->value or key->NO_VALUE)
+        if (missed.get(transaction).contains(key)) {
+            throw new KeyNotExistsException();
+        }
 
         // Change value in snapshot store
         snapshot.put(key, value);
@@ -144,7 +148,7 @@ public class Store {
         // trace
         synchronized (this) {
             this.traceWritten.getField(transaction.getId() + "").add(key);
-            this.snapshot.getField(transaction.getId() + "").setKey(key, value);
+            this.traceSnapshot.getField(transaction.getId() + "").setKey(key, value);
             this.tracer.log("Update", new Object[]{transaction.toString(), key.intValue(), value});
             // this.tracer.log();
         }
@@ -154,12 +158,28 @@ public class Store {
         System.out.println("Remove (" + transaction + "): " + key);
 
         final Map<Integer, String> snapshot = snapshots.get(transaction);
-        // if key doesn't already exist (local operation on the snapshot or
-        // in the store) throw exception
-        if (!(snapshot.containsKey(key) && !snapshot.get(key).equals(NO_VALUE))
-                && !store.containsKey(key)) {
+        if (!snapshot.containsKey(key)) { // key doesn't exist in the snapshot
+            if (!store.containsKey(key)) { // and it doesn't exist in the store
+                throw new KeyNotExistsException();
+            } else { // key exists in the store 
+                if (store.get(key).equals(NO_VALUE)) { // but it is a NO_VALUE (because of a remove operation)
+                    throw new KeyNotExistsException();
+                }
+            }
+        } else { // key exists in the snapshot 
+            if (snapshot.get(key).equals(NO_VALUE)) { // but it is a NO_VALUE (because of a remove operation)
+                throw new KeyNotExistsException();
+            }
+        }
+
+        // if key has been affected by an operation in a different transaction, throw exception
+        // -> just to be sure that key->some_value in the store is not because of an add operation 
+        // from another transaction started the same time and already finished (and that the store 
+        // of the beginning of the transaction did not contain the key or contained key->NO_VALUE)
+        if (missed.get(transaction).contains(key)) {
             throw new KeyNotExistsException();
         }
+        
         // Change value to NO_VALUE in snapshot in order
         // to remove the key at commit time
         snapshot.put(key, NO_VALUE);
