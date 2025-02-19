@@ -255,6 +255,7 @@ public class Store {
         return true;
     }
 
+    @Override
     public String toString() {
         return store.toString() + " - " + openTransactions.toString();
     }
