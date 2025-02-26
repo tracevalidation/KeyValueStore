@@ -4,8 +4,9 @@ from subprocess import Popen
 
 # Path to TLA installation
 tla_dir = "/opt/TLAToolbox-1.8.0-nightly/toolbox"
-tla_jar = os.path.join(tla_dir, "tla2tools.jar")
-community_modules_jar = os.path.join(tla_dir, "CommunityModules-deps.jar")
+tla_com_dir = "/opt/TLAToolbox-1.8.0-nightly/toolbox"
+tla_jar = os.path.join(tla_dir, "tla2tools.2.18.jar")
+community_modules_jar = os.path.join(tla_com_dir, "CommunityModules-deps.2.18.jar")
 tla_cp = f"{tla_jar}:{community_modules_jar}"
 
 # Run TLC
@@ -20,6 +21,8 @@ def run_tla(trace_spec,trace="trace.ndjson",config="conf.ndjson",dfs=False):
             "-cp",
             tla_cp,
             "tlc2.TLC",
+            "-checkpoint", 
+            "0",
             "-note",
             trace_spec])
     else:
@@ -29,6 +32,8 @@ def run_tla(trace_spec,trace="trace.ndjson",config="conf.ndjson",dfs=False):
             "-cp",
             tla_cp,
             "tlc2.TLC",
+            "-checkpoint",
+            "0",
             "-note",
             trace_spec])
     tla_trace_validation_process.wait()

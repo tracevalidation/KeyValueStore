@@ -121,7 +121,7 @@ __pycache__
 .vscode/
 
 # temporary trace and clock
-Traces/
+TracesBUG/
 trace.ndjson
 store.ndjson
 kvs.clock

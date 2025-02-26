@@ -1,0 +1,298 @@
+{"tx": [{"op": "AddElement", "path": [], "args": ["0"]}]}
+{"tx": [{"op": "AddElement", "path": [], "args": ["1"]}]}
+{"tx": [{"op": "AddElement", "path": [], "args": ["2"]}]}
+{"tx": [{"op": "AddElement", "path": [], "args": ["3"]}]}
+{"tx": [{"op": "AddElement", "path": [], "args": ["4"]}]}
+{"tx": [{"op": "AddElement", "path": [], "args": ["5"]}]}
+{"tx": [{"op": "AddElement", "path": [], "args": ["6"]}]}
+{"tx": [{"op": "AddElement", "path": [], "args": ["7"]}]}
+{"tx": [{"op": "AddElement", "path": [], "args": ["8"]}]}
+{"tx": [{"op": "AddElement", "path": [], "args": ["9"]}]}
+{"written": [{"op": "AddElement", "path": ["7"], "args": [14]}], "snapshotStore": [{"op": "SetKey", "path": ["7"], "args": [14, "V9"]}]}
+{"written": [{"op": "AddElement", "path": ["0"], "args": [13]}], "snapshotStore": [{"op": "SetKey", "path": ["0"], "args": [13, "V13"]}]}
+{"written": [{"op": "AddElement", "path": ["7"], "args": [9]}], "snapshotStore": [{"op": "SetKey", "path": ["7"], "args": [9, "V32"]}]}
+{"written": [{"op": "AddElement", "path": ["0"], "args": [3]}], "snapshotStore": [{"op": "SetKey", "path": ["0"], "args": [3, "V22"]}]}
+{"written": [{"op": "AddElement", "path": ["9"], "args": [11]}], "snapshotStore": [{"op": "SetKey", "path": ["9"], "args": [11, "V7"]}]}
+{"written": [{"op": "AddElement", "path": ["2"], "args": [16]}], "snapshotStore": [{"op": "SetKey", "path": ["2"], "args": [16, "V8"]}]}
+{"written": [{"op": "AddElement", "path": ["2"], "args": [15]}], "snapshotStore": [{"op": "SetKey", "path": ["2"], "args": [15, "V3"]}]}
+{"written": [{"op": "AddElement", "path": ["6"], "args": [18]}], "snapshotStore": [{"op": "SetKey", "path": ["6"], "args": [18, "V3"]}]}
+{"written": [{"op": "AddElement", "path": ["2"], "args": [4]}], "snapshotStore": [{"op": "SetKey", "path": ["2"], "args": [4, "V10"]}]}
+{"written": [{"op": "AddElement", "path": ["3"], "args": [18]}], "snapshotStore": [{"op": "SetKey", "path": ["3"], "args": [18, "V12"]}]}
+{"written": [{"op": "AddElement", "path": ["9"], "args": [9]}], "snapshotStore": [{"op": "SetKey", "path": ["9"], "args": [9, "V35"]}]}
+{"written": [{"op": "AddElement", "path": ["3"], "args": [8]}], "snapshotStore": [{"op": "SetKey", "path": ["3"], "args": [8, "V29"]}]}
+{"written": [{"op": "AddElement", "path": ["2"], "args": [7]}], "snapshotStore": [{"op": "SetKey", "path": ["2"], "args": [7, "V38"]}]}
+{"written": [{"op": "AddElement", "path": ["8"], "args": [11]}], "snapshotStore": [{"op": "SetKey", "path": ["8"], "args": [11, "V26"]}]}
+{"written": [{"op": "AddElement", "path": ["9"], "args": [19]}], "snapshotStore": [{"op": "SetKey", "path": ["9"], "args": [19, "V2"]}]}
+{"written": [{"op": "AddElement", "path": ["4"], "args": [16]}], "snapshotStore": [{"op": "SetKey", "path": ["4"], "args": [16, "V2"]}]}
+{"written": [{"op": "AddElement", "path": ["4"], "args": [16]}], "snapshotStore": [{"op": "SetKey", "path": ["4"], "args": [16, "V28"]}]}
+{"written": [{"op": "AddElement", "path": ["1"], "args": [7]}], "snapshotStore": [{"op": "SetKey", "path": ["1"], "args": [7, "V29"]}]}
+{"tx": [{"op": "RemoveElement", "path": [], "args": ["7"]}], "written": [{"op": "Clear", "path": ["7"], "args": []}]}
+{"tx": [{"op": "RemoveElement", "path": [], "args": ["2"]}], "written": [{"op": "Clear", "path": ["2"], "args": []}]}
+{"written": [{"op": "AddElement", "path": ["0"], "args": [12]}], "snapshotStore": [{"op": "SetKey", "path": ["0"], "args": [12, "V33"]}]}
+{"tx": [{"op": "RemoveElement", "path": [], "args": ["8"]}], "written": [{"op": "Clear", "path": ["8"], "args": []}]}
+{"tx": [{"op": "RemoveElement", "path": [], "args": ["5"]}], "written": [{"op": "Clear", "path": ["5"], "args": []}]}
+{"tx": [{"op": "RemoveElement", "path": [], "args": ["6"]}], "written": [{"op": "Clear", "path": ["6"], "args": []}]}
+{"tx": [{"op": "RemoveElement", "path": [], "args": ["3"]}], "written": [{"op": "Clear", "path": ["3"], "args": []}]}
+{"tx": [{"op": "RemoveElement", "path": [], "args": ["0"]}], "written": [{"op": "Clear", "path": ["0"], "args": []}]}
+{"tx": [{"op": "RemoveElement", "path": [], "args": ["1"]}], "written": [{"op": "Clear", "path": ["1"], "args": []}]}
+{"tx": [{"op": "RemoveElement", "path": [], "args": ["9"]}], "written": [{"op": "Clear", "path": ["9"], "args": []}]}
+{"tx": [{"op": "RemoveElement", "path": [], "args": ["4"]}], "written": [{"op": "Clear", "path": ["4"], "args": []}]}
+{"tx": [{"op": "AddElement", "path": [], "args": ["0"]}]}
+{"tx": [{"op": "AddElement", "path": [], "args": ["1"]}]}
+{"written": [{"op": "AddElement", "path": ["1"], "args": [15]}], "snapshotStore": [{"op": "SetKey", "path": ["1"], "args": [15, "V7"]}]}
+{"tx": [{"op": "AddElement", "path": [], "args": ["2"]}]}
+{"tx": [{"op": "AddElement", "path": [], "args": ["3"]}]}
+{"tx": [{"op": "AddElement", "path": [], "args": ["4"]}]}
+{"written": [{"op": "AddElement", "path": ["4"], "args": [13]}], "snapshotStore": [{"op": "SetKey", "path": ["4"], "args": [13, "V2"]}]}
+{"tx": [{"op": "AddElement", "path": [], "args": ["5"]}]}
+{"written": [{"op": "AddElement", "path": ["0"], "args": [14]}], "snapshotStore": [{"op": "SetKey", "path": ["0"], "args": [14, "V25"]}]}
+{"tx": [{"op": "AddElement", "path": [], "args": ["6"]}]}
+{"written": [{"op": "AddElement", "path": ["1"], "args": [8]}], "snapshotStore": [{"op": "SetKey", "path": ["1"], "args": [8, "V2"]}]}
+{"tx": [{"op": "AddElement", "path": [], "args": ["7"]}]}
+{"tx": [{"op": "AddElement", "path": [], "args": ["8"]}]}
+{"tx": [{"op": "AddElement", "path": [], "args": ["9"]}]}
+{"written": [{"op": "AddElement", "path": ["0"], "args": [3]}], "snapshotStore": [{"op": "SetKey", "path": ["0"], "args": [3, "V21"]}]}
+{"written": [{"op": "AddElement", "path": ["4"], "args": [19]}], "snapshotStore": [{"op": "SetKey", "path": ["4"], "args": [19, "V24"]}]}
+{"written": [{"op": "AddElement", "path": ["7"], "args": [18]}], "snapshotStore": [{"op": "SetKey", "path": ["7"], "args": [18, "V9"]}]}
+{"written": [{"op": "AddElement", "path": ["6"], "args": [16]}], "snapshotStore": [{"op": "SetKey", "path": ["6"], "args": [16, "V11"]}]}
+{"written": [{"op": "AddElement", "path": ["0"], "args": [10]}], "snapshotStore": [{"op": "SetKey", "path": ["0"], "args": [10, "V7"]}]}
+{"written": [{"op": "AddElement", "path": ["1"], "args": [13]}], "snapshotStore": [{"op": "SetKey", "path": ["1"], "args": [13, "V5"]}]}
+{"written": [{"op": "AddElement", "path": ["6"], "args": [11]}], "snapshotStore": [{"op": "SetKey", "path": ["6"], "args": [11, "V36"]}]}
+{"written": [{"op": "AddElement", "path": ["8"], "args": [19]}], "snapshotStore": [{"op": "SetKey", "path": ["8"], "args": [19, "V31"]}]}
+{"written": [{"op": "AddElement", "path": ["2"], "args": [16]}], "snapshotStore": [{"op": "SetKey", "path": ["2"], "args": [16, "V33"]}]}
+{"written": [{"op": "AddElement", "path": ["7"], "args": [12]}], "snapshotStore": [{"op": "SetKey", "path": ["7"], "args": [12, "V1"]}]}
+{"written": [{"op": "AddElement", "path": ["6"], "args": [11]}], "snapshotStore": [{"op": "SetKey", "path": ["6"], "args": [11, "V24"]}]}
+{"written": [{"op": "AddElement", "path": ["9"], "args": [11]}], "snapshotStore": [{"op": "SetKey", "path": ["9"], "args": [11, "V13"]}]}
+{"written": [{"op": "AddElement", "path": ["5"], "args": [7]}]}
+{"written": [{"op": "AddElement", "path": ["0"], "args": [18]}], "snapshotStore": [{"op": "SetKey", "path": ["0"], "args": [18, "V6"]}]}
+{"written": [{"op": "AddElement", "path": ["2"], "args": [14]}], "snapshotStore": [{"op": "SetKey", "path": ["2"], "args": [14, "V20"]}]}
+{"written": [{"op": "AddElement", "path": ["8"], "args": [1]}], "snapshotStore": [{"op": "SetKey", "path": ["8"], "args": [1, "V24"]}]}
+{"written": [{"op": "AddElement", "path": ["9"], "args": [13]}], "snapshotStore": [{"op": "SetKey", "path": ["9"], "args": [13, "V34"]}]}
+{"written": [{"op": "AddElement", "path": ["4"], "args": [3]}], "snapshotStore": [{"op": "SetKey", "path": ["4"], "args": [3, "V3"]}]}
+{"written": [{"op": "AddElement", "path": ["0"], "args": [11]}], "snapshotStore": [{"op": "SetKey", "path": ["0"], "args": [11, "V6"]}]}
+{"written": [{"op": "AddElement", "path": ["1"], "args": [18]}], "snapshotStore": [{"op": "SetKey", "path": ["1"], "args": [18, "V2"]}]}
+{"written": [{"op": "AddElement", "path": ["7"], "args": [7]}], "snapshotStore": [{"op": "SetKey", "path": ["7"], "args": [7, "V13"]}]}
+{"written": [{"op": "AddElement", "path": ["9"], "args": [18]}], "snapshotStore": [{"op": "SetKey", "path": ["9"], "args": [18, "V15"]}]}
+{"written": [{"op": "AddElement", "path": ["7"], "args": [10]}], "snapshotStore": [{"op": "SetKey", "path": ["7"], "args": [10, "V35"]}]}
+{"written": [{"op": "AddElement", "path": ["4"], "args": [14]}], "snapshotStore": [{"op": "SetKey", "path": ["4"], "args": [14, "V30"]}]}
+{"written": [{"op": "AddElement", "path": ["1"], "args": [14]}], "snapshotStore": [{"op": "SetKey", "path": ["1"], "args": [14, "V33"]}]}
+{"written": [{"op": "AddElement", "path": ["8"], "args": [14]}], "snapshotStore": [{"op": "SetKey", "path": ["8"], "args": [14, "V39"]}]}
+{"written": [{"op": "AddElement", "path": ["0"], "args": [16]}], "snapshotStore": [{"op": "SetKey", "path": ["0"], "args": [16, "V30"]}]}
+{"written": [{"op": "AddElement", "path": ["8"], "args": [14]}], "snapshotStore": [{"op": "SetKey", "path": ["8"], "args": [14, "V13"]}]}
+{"written": [{"op": "AddElement", "path": ["2"], "args": [5]}], "snapshotStore": [{"op": "SetKey", "path": ["2"], "args": [5, "V24"]}]}
+{"written": [{"op": "AddElement", "path": ["7"], "args": [20]}], "snapshotStore": [{"op": "SetKey", "path": ["7"], "args": [20, "V36"]}]}
+{"written": [{"op": "AddElement", "path": ["1"], "args": [5]}], "snapshotStore": [{"op": "SetKey", "path": ["1"], "args": [5, "V38"]}]}
+{"written": [{"op": "AddElement", "path": ["3"], "args": [3]}], "snapshotStore": [{"op": "SetKey", "path": ["3"], "args": [3, "V27"]}]}
+{"written": [{"op": "AddElement", "path": ["1"], "args": [15]}], "snapshotStore": [{"op": "SetKey", "path": ["1"], "args": [15, "V29"]}]}
+{"tx": [{"op": "RemoveElement", "path": [], "args": ["0"]}], "written": [{"op": "Clear", "path": ["0"], "args": []}]}
+{"written": [{"op": "AddElement", "path": ["7"], "args": [7]}], "snapshotStore": [{"op": "SetKey", "path": ["7"], "args": [7, "V5"]}]}
+{"tx": [{"op": "RemoveElement", "path": [], "args": ["1"]}], "written": [{"op": "Clear", "path": ["1"], "args": []}]}
+{"tx": [{"op": "RemoveElement", "path": [], "args": ["2"]}], "written": [{"op": "Clear", "path": ["2"], "args": []}]}
+{"tx": [{"op": "RemoveElement", "path": [], "args": ["9"]}], "written": [{"op": "Clear", "path": ["9"], "args": []}]}
+{"tx": [{"op": "RemoveElement", "path": [], "args": ["6"]}], "written": [{"op": "Clear", "path": ["6"], "args": []}]}
+{"tx": [{"op": "RemoveElement", "path": [], "args": ["4"]}], "written": [{"op": "Clear", "path": ["4"], "args": []}]}
+{"tx": [{"op": "RemoveElement", "path": [], "args": ["5"]}], "written": [{"op": "Clear", "path": ["5"], "args": []}]}
+{"tx": [{"op": "RemoveElement", "path": [], "args": ["8"]}], "written": [{"op": "Clear", "path": ["8"], "args": []}]}
+{"tx": [{"op": "RemoveElement", "path": [], "args": ["7"]}], "written": [{"op": "Clear", "path": ["7"], "args": []}]}
+{"tx": [{"op": "RemoveElement", "path": [], "args": ["3"]}], "written": [{"op": "Clear", "path": ["3"], "args": []}]}
+{"tx": [{"op": "AddElement", "path": [], "args": ["0"]}]}
+{"tx": [{"op": "AddElement", "path": [], "args": ["1"]}]}
+{"written": [{"op": "AddElement", "path": ["1"], "args": [1]}], "snapshotStore": [{"op": "SetKey", "path": ["1"], "args": [1, "V36"]}]}
+{"tx": [{"op": "AddElement", "path": [], "args": ["2"]}]}
+{"written": [{"op": "AddElement", "path": ["2"], "args": [14]}], "snapshotStore": [{"op": "SetKey", "path": ["2"], "args": [14, "V3"]}]}
+{"tx": [{"op": "AddElement", "path": [], "args": ["3"]}]}
+{"written": [{"op": "AddElement", "path": ["0"], "args": [17]}], "snapshotStore": [{"op": "SetKey", "path": ["0"], "args": [17, "V29"]}]}
+{"tx": [{"op": "AddElement", "path": [], "args": ["4"]}]}
+{"tx": [{"op": "AddElement", "path": [], "args": ["5"]}]}
+{"tx": [{"op": "AddElement", "path": [], "args": ["6"]}]}
+{"tx": [{"op": "AddElement", "path": [], "args": ["7"]}]}
+{"tx": [{"op": "AddElement", "path": [], "args": ["8"]}]}
+{"written": [{"op": "AddElement", "path": ["8"], "args": [1]}], "snapshotStore": [{"op": "SetKey", "path": ["8"], "args": [1, "V37"]}]}
+{"written": [{"op": "AddElement", "path": ["0"], "args": [18]}], "snapshotStore": [{"op": "SetKey", "path": ["0"], "args": [18, "V12"]}]}
+{"tx": [{"op": "AddElement", "path": [], "args": ["9"]}]}
+{"written": [{"op": "AddElement", "path": ["9"], "args": [16]}], "snapshotStore": [{"op": "SetKey", "path": ["9"], "args": [16, "V24"]}]}
+{"written": [{"op": "AddElement", "path": ["7"], "args": [12]}], "snapshotStore": [{"op": "SetKey", "path": ["7"], "args": [12, "V12"]}]}
+{"written": [{"op": "AddElement", "path": ["6"], "args": [14]}], "snapshotStore": [{"op": "SetKey", "path": ["6"], "args": [14, "V23"]}]}
+{"written": [{"op": "AddElement", "path": ["2"], "args": [5]}], "snapshotStore": [{"op": "SetKey", "path": ["2"], "args": [5, "V33"]}]}
+{"written": [{"op": "AddElement", "path": ["8"], "args": [15]}], "snapshotStore": [{"op": "SetKey", "path": ["8"], "args": [15, "V18"]}]}
+{"written": [{"op": "AddElement", "path": ["0"], "args": [11]}], "snapshotStore": [{"op": "SetKey", "path": ["0"], "args": [11, "V7"]}]}
+{"written": [{"op": "AddElement", "path": ["6"], "args": [8]}], "snapshotStore": [{"op": "SetKey", "path": ["6"], "args": [8, "V26"]}]}
+{"written": [{"op": "AddElement", "path": ["2"], "args": [10]}], "snapshotStore": [{"op": "SetKey", "path": ["2"], "args": [10, "V3"]}]}
+{"written": [{"op": "AddElement", "path": ["9"], "args": [3]}], "snapshotStore": [{"op": "SetKey", "path": ["9"], "args": [3, "V39"]}]}
+{"written": [{"op": "AddElement", "path": ["3"], "args": [3]}], "snapshotStore": [{"op": "SetKey", "path": ["3"], "args": [3, "V16"]}]}
+{"written": [{"op": "AddElement", "path": ["6"], "args": [9]}], "snapshotStore": [{"op": "SetKey", "path": ["6"], "args": [9, "V10"]}]}
+{"written": [{"op": "AddElement", "path": ["8"], "args": [11]}], "snapshotStore": [{"op": "SetKey", "path": ["8"], "args": [11, "V12"]}]}
+{"written": [{"op": "AddElement", "path": ["7"], "args": [14]}], "snapshotStore": [{"op": "SetKey", "path": ["7"], "args": [14, "V33"]}]}
+{"written": [{"op": "AddElement", "path": ["0"], "args": [4]}], "snapshotStore": [{"op": "SetKey", "path": ["0"], "args": [4, "V24"]}]}
+{"written": [{"op": "AddElement", "path": ["5"], "args": [4]}], "snapshotStore": [{"op": "SetKey", "path": ["5"], "args": [4, "V16"]}]}
+{"written": [{"op": "AddElement", "path": ["4"], "args": [13]}], "snapshotStore": [{"op": "SetKey", "path": ["4"], "args": [13, "V1"]}]}
+{"written": [{"op": "AddElement", "path": ["2"], "args": [11]}], "snapshotStore": [{"op": "SetKey", "path": ["2"], "args": [11, "V21"]}]}
+{"written": [{"op": "AddElement", "path": ["8"], "args": [17]}], "snapshotStore": [{"op": "SetKey", "path": ["8"], "args": [17, "V25"]}]}
+{"written": [{"op": "AddElement", "path": ["7"], "args": [18]}], "snapshotStore": [{"op": "SetKey", "path": ["7"], "args": [18, "V2"]}]}
+{"written": [{"op": "AddElement", "path": ["3"], "args": [4]}], "snapshotStore": [{"op": "SetKey", "path": ["3"], "args": [4, "V26"]}]}
+{"written": [{"op": "AddElement", "path": ["1"], "args": [9]}], "snapshotStore": [{"op": "SetKey", "path": ["1"], "args": [9, "V35"]}]}
+{"written": [{"op": "AddElement", "path": ["5"], "args": [10]}], "snapshotStore": [{"op": "SetKey", "path": ["5"], "args": [10, "V24"]}]}
+{"written": [{"op": "AddElement", "path": ["0"], "args": [15]}], "snapshotStore": [{"op": "SetKey", "path": ["0"], "args": [15, "V1"]}]}
+{"written": [{"op": "AddElement", "path": ["6"], "args": [16]}], "snapshotStore": [{"op": "SetKey", "path": ["6"], "args": [16, "V11"]}]}
+{"written": [{"op": "AddElement", "path": ["3"], "args": [7]}], "snapshotStore": [{"op": "SetKey", "path": ["3"], "args": [7, "V26"]}]}
+{"written": [{"op": "AddElement", "path": ["2"], "args": [19]}], "snapshotStore": [{"op": "SetKey", "path": ["2"], "args": [19, "V10"]}]}
+{"written": [{"op": "AddElement", "path": ["7"], "args": [6]}], "snapshotStore": [{"op": "SetKey", "path": ["7"], "args": [6, "V19"]}]}
+{"written": [{"op": "AddElement", "path": ["1"], "args": [18]}], "snapshotStore": [{"op": "SetKey", "path": ["1"], "args": [18, "V29"]}]}
+{"written": [{"op": "AddElement", "path": ["5"], "args": [4]}], "snapshotStore": [{"op": "SetKey", "path": ["5"], "args": [4, "V31"]}]}
+{"written": [{"op": "AddElement", "path": ["0"], "args": [9]}], "snapshotStore": [{"op": "SetKey", "path": ["0"], "args": [9, "V5"]}]}
+{"written": [{"op": "AddElement", "path": ["3"], "args": [1]}], "snapshotStore": [{"op": "SetKey", "path": ["3"], "args": [1, "V31"]}]}
+{"written": [{"op": "AddElement", "path": ["1"], "args": [5]}], "snapshotStore": [{"op": "SetKey", "path": ["1"], "args": [5, "V39"]}]}
+{"written": [{"op": "AddElement", "path": ["7"], "args": [6]}], "snapshotStore": [{"op": "SetKey", "path": ["7"], "args": [6, "V6"]}]}
+{"written": [{"op": "AddElement", "path": ["4"], "args": [10]}], "snapshotStore": [{"op": "SetKey", "path": ["4"], "args": [10, "V32"]}]}
+{"written": [{"op": "AddElement", "path": ["9"], "args": [16]}], "snapshotStore": [{"op": "SetKey", "path": ["9"], "args": [16, "V13"]}]}
+{"written": [{"op": "AddElement", "path": ["0"], "args": [15]}], "snapshotStore": [{"op": "SetKey", "path": ["0"], "args": [15, "V28"]}]}
+{"written": [{"op": "AddElement", "path": ["6"], "args": [9]}], "snapshotStore": [{"op": "SetKey", "path": ["6"], "args": [9, "V3"]}]}
+{"written": [{"op": "AddElement", "path": ["8"], "args": [12]}], "snapshotStore": [{"op": "SetKey", "path": ["8"], "args": [12, "V21"]}]}
+{"written": [{"op": "AddElement", "path": ["2"], "args": [10]}], "snapshotStore": [{"op": "SetKey", "path": ["2"], "args": [10, "V10"]}]}
+{"written": [{"op": "AddElement", "path": ["5"], "args": [10]}], "snapshotStore": [{"op": "SetKey", "path": ["5"], "args": [10, "V8"]}]}
+{"written": [{"op": "AddElement", "path": ["6"], "args": [3]}], "snapshotStore": [{"op": "SetKey", "path": ["6"], "args": [3, "V1"]}]}
+{"written": [{"op": "AddElement", "path": ["8"], "args": [12]}], "snapshotStore": [{"op": "SetKey", "path": ["8"], "args": [12, "V10"]}]}
+{"tx": [{"op": "RemoveElement", "path": [], "args": ["3"]}], "written": [{"op": "Clear", "path": ["3"], "args": []}]}
+{"tx": [{"op": "RemoveElement", "path": [], "args": ["2"]}], "written": [{"op": "Clear", "path": ["2"], "args": []}]}
+{"tx": [{"op": "RemoveElement", "path": [], "args": ["0"]}], "written": [{"op": "Clear", "path": ["0"], "args": []}]}
+{"tx": [{"op": "RemoveElement", "path": [], "args": ["6"]}], "written": [{"op": "Clear", "path": ["6"], "args": []}]}
+{"tx": [{"op": "RemoveElement", "path": [], "args": ["1"]}], "written": [{"op": "Clear", "path": ["1"], "args": []}]}
+{"tx": [{"op": "RemoveElement", "path": [], "args": ["7"]}], "written": [{"op": "Clear", "path": ["7"], "args": []}]}
+{"tx": [{"op": "RemoveElement", "path": [], "args": ["4"]}], "written": [{"op": "Clear", "path": ["4"], "args": []}]}
+{"tx": [{"op": "RemoveElement", "path": [], "args": ["8"]}], "written": [{"op": "Clear", "path": ["8"], "args": []}]}
+{"tx": [{"op": "RemoveElement", "path": [], "args": ["5"]}], "written": [{"op": "Clear", "path": ["5"], "args": []}]}
+{"tx": [{"op": "RemoveElement", "path": [], "args": ["9"]}], "written": [{"op": "Clear", "path": ["9"], "args": []}]}
+{"tx": [{"op": "AddElement", "path": [], "args": ["0"]}]}
+{"written": [{"op": "AddElement", "path": ["0"], "args": [13]}]}
+{"tx": [{"op": "AddElement", "path": [], "args": ["1"]}]}
+{"written": [{"op": "AddElement", "path": ["1"], "args": [18]}], "snapshotStore": [{"op": "SetKey", "path": ["1"], "args": [18, "V22"]}]}
+{"tx": [{"op": "AddElement", "path": [], "args": ["2"]}]}
+{"written": [{"op": "AddElement", "path": ["2"], "args": [3]}], "snapshotStore": [{"op": "SetKey", "path": ["2"], "args": [3, "V23"]}]}
+{"tx": [{"op": "AddElement", "path": [], "args": ["3"]}]}
+{"written": [{"op": "AddElement", "path": ["3"], "args": [4]}], "snapshotStore": [{"op": "SetKey", "path": ["3"], "args": [4, "V6"]}]}
+{"tx": [{"op": "AddElement", "path": [], "args": ["4"]}]}
+{"tx": [{"op": "AddElement", "path": [], "args": ["5"]}]}
+{"tx": [{"op": "AddElement", "path": [], "args": ["6"]}]}
+{"tx": [{"op": "AddElement", "path": [], "args": ["7"]}]}
+{"written": [{"op": "AddElement", "path": ["4"], "args": [12]}], "snapshotStore": [{"op": "SetKey", "path": ["4"], "args": [12, "V18"]}]}
+{"written": [{"op": "AddElement", "path": ["7"], "args": [15]}], "snapshotStore": [{"op": "SetKey", "path": ["7"], "args": [15, "V15"]}]}
+{"written": [{"op": "AddElement", "path": ["1"], "args": [10]}], "snapshotStore": [{"op": "SetKey", "path": ["1"], "args": [10, "V17"]}]}
+{"tx": [{"op": "AddElement", "path": [], "args": ["8"]}]}
+{"written": [{"op": "AddElement", "path": ["8"], "args": [8]}], "snapshotStore": [{"op": "SetKey", "path": ["8"], "args": [8, "V34"]}]}
+{"written": [{"op": "AddElement", "path": ["5"], "args": [14]}], "snapshotStore": [{"op": "SetKey", "path": ["5"], "args": [14, "V23"]}]}
+{"written": [{"op": "AddElement", "path": ["3"], "args": [14]}], "snapshotStore": [{"op": "SetKey", "path": ["3"], "args": [14, "V1"]}]}
+{"written": [{"op": "AddElement", "path": ["6"], "args": [2]}], "snapshotStore": [{"op": "SetKey", "path": ["6"], "args": [2, "V12"]}]}
+{"written": [{"op": "AddElement", "path": ["7"], "args": [12]}], "snapshotStore": [{"op": "SetKey", "path": ["7"], "args": [12, "V29"]}]}
+{"tx": [{"op": "AddElement", "path": [], "args": ["9"]}]}
+{"written": [{"op": "AddElement", "path": ["1"], "args": [9]}], "snapshotStore": [{"op": "SetKey", "path": ["1"], "args": [9, "V5"]}]}
+{"written": [{"op": "AddElement", "path": ["0"], "args": [20]}], "snapshotStore": [{"op": "SetKey", "path": ["0"], "args": [20, "V8"]}]}
+{"written": [{"op": "AddElement", "path": ["8"], "args": [14]}], "snapshotStore": [{"op": "SetKey", "path": ["8"], "args": [14, "V21"]}]}
+{"written": [{"op": "AddElement", "path": ["3"], "args": [3]}]}
+{"written": [{"op": "AddElement", "path": ["4"], "args": [12]}], "snapshotStore": [{"op": "SetKey", "path": ["4"], "args": [12, "V15"]}]}
+{"written": [{"op": "AddElement", "path": ["1"], "args": [1]}], "snapshotStore": [{"op": "SetKey", "path": ["1"], "args": [1, "V35"]}]}
+{"written": [{"op": "AddElement", "path": ["9"], "args": [10]}], "snapshotStore": [{"op": "SetKey", "path": ["9"], "args": [10, "V34"]}]}
+{"written": [{"op": "AddElement", "path": ["6"], "args": [16]}], "snapshotStore": [{"op": "SetKey", "path": ["6"], "args": [16, "V22"]}]}
+{"written": [{"op": "AddElement", "path": ["9"], "args": [4]}], "snapshotStore": [{"op": "SetKey", "path": ["9"], "args": [4, "V37"]}]}
+{"written": [{"op": "AddElement", "path": ["1"], "args": [3]}], "snapshotStore": [{"op": "SetKey", "path": ["1"], "args": [3, "V27"]}]}
+{"written": [{"op": "AddElement", "path": ["6"], "args": [4]}], "snapshotStore": [{"op": "SetKey", "path": ["6"], "args": [4, "V7"]}]}
+{"written": [{"op": "AddElement", "path": ["0"], "args": [8]}], "snapshotStore": [{"op": "SetKey", "path": ["0"], "args": [8, "V16"]}]}
+{"written": [{"op": "AddElement", "path": ["3"], "args": [4]}], "snapshotStore": [{"op": "SetKey", "path": ["3"], "args": [4, "V25"]}]}
+{"written": [{"op": "AddElement", "path": ["7"], "args": [13]}], "snapshotStore": [{"op": "SetKey", "path": ["7"], "args": [13, "V35"]}]}
+{"written": [{"op": "AddElement", "path": ["4"], "args": [13]}], "snapshotStore": [{"op": "SetKey", "path": ["4"], "args": [13, "V40"]}]}
+{"written": [{"op": "AddElement", "path": ["6"], "args": [10]}], "snapshotStore": [{"op": "SetKey", "path": ["6"], "args": [10, "V19"]}]}
+{"written": [{"op": "AddElement", "path": ["8"], "args": [11]}], "snapshotStore": [{"op": "SetKey", "path": ["8"], "args": [11, "V38"]}]}
+{"written": [{"op": "AddElement", "path": ["1"], "args": [1]}], "snapshotStore": [{"op": "SetKey", "path": ["1"], "args": [1, "V6"]}]}
+{"written": [{"op": "AddElement", "path": ["5"], "args": [14]}], "snapshotStore": [{"op": "SetKey", "path": ["5"], "args": [14, "V34"]}]}
+{"written": [{"op": "AddElement", "path": ["9"], "args": [1]}], "snapshotStore": [{"op": "SetKey", "path": ["9"], "args": [1, "V9"]}]}
+{"written": [{"op": "AddElement", "path": ["2"], "args": [1]}], "snapshotStore": [{"op": "SetKey", "path": ["2"], "args": [1, "V39"]}]}
+{"written": [{"op": "AddElement", "path": ["4"], "args": [12]}], "snapshotStore": [{"op": "SetKey", "path": ["4"], "args": [12, "V31"]}]}
+{"written": [{"op": "AddElement", "path": ["9"], "args": [5]}], "snapshotStore": [{"op": "SetKey", "path": ["9"], "args": [5, "V27"]}]}
+{"written": [{"op": "AddElement", "path": ["5"], "args": [10]}], "snapshotStore": [{"op": "SetKey", "path": ["5"], "args": [10, "V14"]}]}
+{"written": [{"op": "AddElement", "path": ["3"], "args": [13]}], "snapshotStore": [{"op": "SetKey", "path": ["3"], "args": [13, "V31"]}]}
+{"written": [{"op": "AddElement", "path": ["1"], "args": [11]}], "snapshotStore": [{"op": "SetKey", "path": ["1"], "args": [11, "V38"]}]}
+{"written": [{"op": "AddElement", "path": ["4"], "args": [19]}], "snapshotStore": [{"op": "SetKey", "path": ["4"], "args": [19, "V11"]}]}
+{"written": [{"op": "AddElement", "path": ["9"], "args": [4]}], "snapshotStore": [{"op": "SetKey", "path": ["9"], "args": [4, "V14"]}]}
+{"written": [{"op": "AddElement", "path": ["7"], "args": [3]}], "snapshotStore": [{"op": "SetKey", "path": ["7"], "args": [3, "V14"]}]}
+{"written": [{"op": "AddElement", "path": ["6"], "args": [15]}], "snapshotStore": [{"op": "SetKey", "path": ["6"], "args": [15, "V36"]}]}
+{"written": [{"op": "AddElement", "path": ["0"], "args": [5]}], "snapshotStore": [{"op": "SetKey", "path": ["0"], "args": [5, "V3"]}]}
+{"written": [{"op": "AddElement", "path": ["4"], "args": [10]}], "snapshotStore": [{"op": "SetKey", "path": ["4"], "args": [10, "V30"]}]}
+{"written": [{"op": "AddElement", "path": ["9"], "args": [17]}], "snapshotStore": [{"op": "SetKey", "path": ["9"], "args": [17, "V17"]}]}
+{"tx": [{"op": "RemoveElement", "path": [], "args": ["5"]}], "written": [{"op": "Clear", "path": ["5"], "args": []}]}
+{"written": [{"op": "AddElement", "path": ["7"], "args": [1]}], "snapshotStore": [{"op": "SetKey", "path": ["7"], "args": [1, "V30"]}]}
+{"written": [{"op": "AddElement", "path": ["8"], "args": [18]}], "snapshotStore": [{"op": "SetKey", "path": ["8"], "args": [18, "V22"]}]}
+{"tx": [{"op": "RemoveElement", "path": [], "args": ["2"]}], "written": [{"op": "Clear", "path": ["2"], "args": []}]}
+{"tx": [{"op": "RemoveElement", "path": [], "args": ["1"]}], "written": [{"op": "Clear", "path": ["1"], "args": []}]}
+{"tx": [{"op": "RemoveElement", "path": [], "args": ["0"]}], "written": [{"op": "Clear", "path": ["0"], "args": []}]}
+{"tx": [{"op": "RemoveElement", "path": [], "args": ["6"]}], "written": [{"op": "Clear", "path": ["6"], "args": []}]}
+{"written": [{"op": "AddElement", "path": ["8"], "args": [11]}], "snapshotStore": [{"op": "SetKey", "path": ["8"], "args": [11, "V35"]}]}
+{"tx": [{"op": "RemoveElement", "path": [], "args": ["3"]}], "written": [{"op": "Clear", "path": ["3"], "args": []}]}
+{"tx": [{"op": "RemoveElement", "path": [], "args": ["7"]}], "written": [{"op": "Clear", "path": ["7"], "args": []}]}
+{"tx": [{"op": "RemoveElement", "path": [], "args": ["4"]}], "written": [{"op": "Clear", "path": ["4"], "args": []}]}
+{"tx": [{"op": "RemoveElement", "path": [], "args": ["8"]}], "written": [{"op": "Clear", "path": ["8"], "args": []}]}
+{"tx": [{"op": "RemoveElement", "path": [], "args": ["9"]}], "written": [{"op": "Clear", "path": ["9"], "args": []}]}
+{"tx": [{"op": "AddElement", "path": [], "args": ["0"]}]}
+{"tx": [{"op": "AddElement", "path": [], "args": ["1"]}]}
+{"tx": [{"op": "AddElement", "path": [], "args": ["2"]}]}
+{"tx": [{"op": "AddElement", "path": [], "args": ["3"]}]}
+{"written": [{"op": "AddElement", "path": ["2"], "args": [9]}], "snapshotStore": [{"op": "SetKey", "path": ["2"], "args": [9, "V12"]}]}
+{"tx": [{"op": "AddElement", "path": [], "args": ["4"]}]}
+{"tx": [{"op": "AddElement", "path": [], "args": ["5"]}]}
+{"written": [{"op": "AddElement", "path": ["1"], "args": [1]}], "snapshotStore": [{"op": "SetKey", "path": ["1"], "args": [1, "V21"]}]}
+{"tx": [{"op": "AddElement", "path": [], "args": ["6"]}]}
+{"written": [{"op": "AddElement", "path": ["6"], "args": [18]}], "snapshotStore": [{"op": "SetKey", "path": ["6"], "args": [18, "V1"]}]}
+{"written": [{"op": "AddElement", "path": ["0"], "args": [10]}], "snapshotStore": [{"op": "SetKey", "path": ["0"], "args": [10, "V40"]}]}
+{"tx": [{"op": "AddElement", "path": [], "args": ["7"]}]}
+{"written": [{"op": "AddElement", "path": ["5"], "args": [19]}], "snapshotStore": [{"op": "SetKey", "path": ["5"], "args": [19, "V40"]}]}
+{"tx": [{"op": "AddElement", "path": [], "args": ["8"]}]}
+{"written": [{"op": "AddElement", "path": ["8"], "args": [14]}], "snapshotStore": [{"op": "SetKey", "path": ["8"], "args": [14, "V37"]}]}
+{"tx": [{"op": "AddElement", "path": [], "args": ["9"]}]}
+{"written": [{"op": "AddElement", "path": ["3"], "args": [18]}], "snapshotStore": [{"op": "SetKey", "path": ["3"], "args": [18, "V39"]}]}
+{"written": [{"op": "AddElement", "path": ["9"], "args": [14]}], "snapshotStore": [{"op": "SetKey", "path": ["9"], "args": [14, "V7"]}]}
+{"written": [{"op": "AddElement", "path": ["2"], "args": [14]}], "snapshotStore": [{"op": "SetKey", "path": ["2"], "args": [14, "V24"]}]}
+{"written": [{"op": "AddElement", "path": ["1"], "args": [3]}]}
+{"written": [{"op": "AddElement", "path": ["3"], "args": [10]}], "snapshotStore": [{"op": "SetKey", "path": ["3"], "args": [10, "V38"]}]}
+{"written": [{"op": "AddElement", "path": ["8"], "args": [16]}], "snapshotStore": [{"op": "SetKey", "path": ["8"], "args": [16, "V24"]}]}
+{"written": [{"op": "AddElement", "path": ["8"], "args": [3]}], "snapshotStore": [{"op": "SetKey", "path": ["8"], "args": [3, "V38"]}]}
+{"written": [{"op": "AddElement", "path": ["5"], "args": [15]}], "snapshotStore": [{"op": "SetKey", "path": ["5"], "args": [15, "V14"]}]}
+{"written": [{"op": "AddElement", "path": ["4"], "args": [4]}], "snapshotStore": [{"op": "SetKey", "path": ["4"], "args": [4, "V2"]}]}
+{"written": [{"op": "AddElement", "path": ["6"], "args": [16]}], "snapshotStore": [{"op": "SetKey", "path": ["6"], "args": [16, "V12"]}]}
+{"written": [{"op": "AddElement", "path": ["2"], "args": [7]}], "snapshotStore": [{"op": "SetKey", "path": ["2"], "args": [7, "V4"]}]}
+{"written": [{"op": "AddElement", "path": ["3"], "args": [7]}], "snapshotStore": [{"op": "SetKey", "path": ["3"], "args": [7, "V36"]}]}
+{"written": [{"op": "AddElement", "path": ["1"], "args": [1]}], "snapshotStore": [{"op": "SetKey", "path": ["1"], "args": [1, "V3"]}]}
+{"written": [{"op": "AddElement", "path": ["4"], "args": [5]}], "snapshotStore": [{"op": "SetKey", "path": ["4"], "args": [5, "V25"]}]}
+{"written": [{"op": "AddElement", "path": ["5"], "args": [9]}], "snapshotStore": [{"op": "SetKey", "path": ["5"], "args": [9, "V15"]}]}
+{"written": [{"op": "AddElement", "path": ["9"], "args": [3]}], "snapshotStore": [{"op": "SetKey", "path": ["9"], "args": [3, "V6"]}]}
+{"written": [{"op": "AddElement", "path": ["0"], "args": [7]}], "snapshotStore": [{"op": "SetKey", "path": ["0"], "args": [7, "V33"]}]}
+{"written": [{"op": "AddElement", "path": ["6"], "args": [4]}], "snapshotStore": [{"op": "SetKey", "path": ["6"], "args": [4, "V23"]}]}
+{"written": [{"op": "AddElement", "path": ["3"], "args": [14]}], "snapshotStore": [{"op": "SetKey", "path": ["3"], "args": [14, "V5"]}]}
+{"written": [{"op": "AddElement", "path": ["2"], "args": [12]}], "snapshotStore": [{"op": "SetKey", "path": ["2"], "args": [12, "V32"]}]}
+{"written": [{"op": "AddElement", "path": ["8"], "args": [7]}], "snapshotStore": [{"op": "SetKey", "path": ["8"], "args": [7, "V23"]}]}
+{"written": [{"op": "AddElement", "path": ["7"], "args": [12]}], "snapshotStore": [{"op": "SetKey", "path": ["7"], "args": [12, "V8"]}]}
+{"written": [{"op": "AddElement", "path": ["4"], "args": [3]}], "snapshotStore": [{"op": "SetKey", "path": ["4"], "args": [3, "V6"]}]}
+{"written": [{"op": "AddElement", "path": ["8"], "args": [3]}], "snapshotStore": [{"op": "SetKey", "path": ["8"], "args": [3, "V2"]}]}
+{"written": [{"op": "AddElement", "path": ["7"], "args": [6]}], "snapshotStore": [{"op": "SetKey", "path": ["7"], "args": [6, "V31"]}]}
+{"written": [{"op": "AddElement", "path": ["2"], "args": [15]}], "snapshotStore": [{"op": "SetKey", "path": ["2"], "args": [15, "V23"]}]}
+{"written": [{"op": "AddElement", "path": ["1"], "args": [7]}], "snapshotStore": [{"op": "SetKey", "path": ["1"], "args": [7, "V5"]}]}
+{"written": [{"op": "AddElement", "path": ["6"], "args": [19]}], "snapshotStore": [{"op": "SetKey", "path": ["6"], "args": [19, "V31"]}]}
+{"written": [{"op": "AddElement", "path": ["3"], "args": [1]}], "snapshotStore": [{"op": "SetKey", "path": ["3"], "args": [1, "V24"]}]}
+{"written": [{"op": "AddElement", "path": ["7"], "args": [9]}], "snapshotStore": [{"op": "SetKey", "path": ["7"], "args": [9, "V19"]}]}
+{"written": [{"op": "AddElement", "path": ["0"], "args": [4]}], "snapshotStore": [{"op": "SetKey", "path": ["0"], "args": [4, "V31"]}]}
+{"written": [{"op": "AddElement", "path": ["9"], "args": [11]}], "snapshotStore": [{"op": "SetKey", "path": ["9"], "args": [11, "V5"]}]}
+{"written": [{"op": "AddElement", "path": ["6"], "args": [15]}], "snapshotStore": [{"op": "SetKey", "path": ["6"], "args": [15, "V13"]}]}
+{"written": [{"op": "AddElement", "path": ["3"], "args": [3]}], "snapshotStore": [{"op": "SetKey", "path": ["3"], "args": [3, "V17"]}]}
+{"written": [{"op": "AddElement", "path": ["7"], "args": [8]}], "snapshotStore": [{"op": "SetKey", "path": ["7"], "args": [8, "V32"]}]}
+{"written": [{"op": "AddElement", "path": ["1"], "args": [7]}], "snapshotStore": [{"op": "SetKey", "path": ["1"], "args": [7, "V32"]}]}
+{"written": [{"op": "AddElement", "path": ["6"], "args": [5]}], "snapshotStore": [{"op": "SetKey", "path": ["6"], "args": [5, "V28"]}]}
+{"written": [{"op": "AddElement", "path": ["2"], "args": [14]}], "snapshotStore": [{"op": "SetKey", "path": ["2"], "args": [14, "V4"]}]}
+{"written": [{"op": "AddElement", "path": ["9"], "args": [19]}], "snapshotStore": [{"op": "SetKey", "path": ["9"], "args": [19, "V33"]}]}
+{"tx": [{"op": "RemoveElement", "path": [], "args": ["3"]}], "written": [{"op": "Clear", "path": ["3"], "args": []}]}
+{"tx": [{"op": "RemoveElement", "path": [], "args": ["0"]}], "written": [{"op": "Clear", "path": ["0"], "args": []}]}
+{"tx": [{"op": "RemoveElement", "path": [], "args": ["2"]}], "written": [{"op": "Clear", "path": ["2"], "args": []}]}
+{"tx": [{"op": "RemoveElement", "path": [], "args": ["1"]}], "written": [{"op": "Clear", "path": ["1"], "args": []}]}
+{"tx": [{"op": "RemoveElement", "path": [], "args": ["4"]}], "written": [{"op": "Clear", "path": ["4"], "args": []}]}
+{"written": [{"op": "AddElement", "path": ["7"], "args": [15]}], "snapshotStore": [{"op": "SetKey", "path": ["7"], "args": [15, "V17"]}]}
+{"tx": [{"op": "RemoveElement", "path": [], "args": ["6"]}], "written": [{"op": "Clear", "path": ["6"], "args": []}]}
+{"tx": [{"op": "RemoveElement", "path": [], "args": ["9"]}], "written": [{"op": "Clear", "path": ["9"], "args": []}]}
+{"tx": [{"op": "RemoveElement", "path": [], "args": ["7"]}], "written": [{"op": "Clear", "path": ["7"], "args": []}]}
+{"tx": [{"op": "RemoveElement", "path": [], "args": ["8"]}], "written": [{"op": "Clear", "path": ["8"], "args": []}]}
+{"tx": [{"op": "RemoveElement", "path": [], "args": ["5"]}], "written": [{"op": "Clear", "path": ["5"], "args": []}]}

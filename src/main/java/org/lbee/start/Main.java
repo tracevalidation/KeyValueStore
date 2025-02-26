@@ -29,9 +29,9 @@ import com.google.gson.JsonSyntaxException;
 import com.google.gson.reflect.TypeToken;
 
 public class Main {
-    private static final int NB_CLIENTS = 8;
+    private static final int NB_CLIENTS = 4;
     private static final int NB_TX = 2;
-    private static final int NB_REQ = 8;
+    private static final int NB_REQ = 6;
     
     public static void main(String[] args) throws InterruptedException, IOException, KeyExistsException, ClockException {
         List<Integer> keys = new ArrayList<>();
